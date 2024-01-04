@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3{
+            text-decoration: underline;
+        }
+           
+        h4{
+            margin-left: 50px; 
+        }
+        h3{
+            margin-left: 50px; 
+        }
+        ul{
+            margin-left: 50px; 
+        }
+        table{
+            margin-bottom: 180px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>5. 분석 결과 시각화</h2>
+    <hr>
+    <table>
+        <tr>
+            <td>
+                <img src="{{url_for('static', filename='연도별 드라마 시간.png')}}" alt='연도별 드라마 시간' width="700" height="400"/>
+            </td>
+
+            <td>
+                <h3>최근 쇼츠, 릴스 등 짧은 영상 유행으로 인한 드라마 시간 분석</h3>
+                <p>
+                <ul>
+                    <li>드라마 시간을 분으로 변환</li>
+                    <li>연도별로 그룹화하고 시간의 평균을 시각화 하여 분석</li>
+                </ul>
+                </p>
+                <p>
+                <h4>분석 결과</h4>
+                <ul>
+                    <li>트렌드를 따라 드라마 시간도 감소할거라는 추측과 달리 큰 차이가 나지 않는다</li>
+                    <li>어떤 이유인지 다른 컬럼을 통해 확인</li>
+                </ul>
+                </p>
+            </td>
+        </tr>
+    </table> 
+
+    <table>
+        <tr>
+            <td>
+                <img src="{{url_for('static', filename='연도별 드라마 회차.png')}}" alt='연도별 드라마 회차' width='500' height='400' />
+            </td>
+            <td>
+                <h3>시간 대신 회차가 감소하는지 분석</h3>
+                <p>
+                <ul>
+                    <li>연도별로 그룹화하고 회차의 평균을 시각화 하여 분석</li>
+                </ul>
+                </p>
+                <p>
+                <h4>분석 결과</h4>
+                <ul>
+                    <li>감소하는 그래프 확인</li>
+                    <li>2003년 ~ 2010년 그래프가 이상</li>
+                </ul>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <img src="{{url_for('static', filename='드라마 회차 이상값.png')}}" alt='드라마 회차 이상값' width='600' height='300' />
+            </td>
+            <td>
+                <h3>드라마 회차 이상값 확인</h3>
+                <p>
+                <ul>
+                    <li>해당연도들을 인덱싱하여 해당 값 확인</li>
+                </ul>
+                </p>
+                <p>
+                <h4>분석 결과</h4>
+                <ul>
+                    <li>2003년 ~ 2010년은 모두 데이터가 1개</li>
+                    <li>객관적인 데이터라고 볼 수 없다.</li>
+                </ul>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <img src="{{url_for('static', filename='연도별 드라마 회차 최근 5년.png')}}" alt='연도별 드라마 회차 최근 8년' width='500' height='400' />
+            </td>
+            <td>
+                <h3>데이터가 비교적 많은 최근 8년 동안의 데이터만을 활용하여 시각화</h3>
+                <p>
+                <h4>분석 결과</h4>
+                <ul>
+                    <li>감소하는 그래프 확인</li>
+                    <li>쇼츠, 릴스 등 짧은 영상이 트렌드인 지금 드라마 시간이 줄어들지 않았지만
+                        회차는 줄어든 모습을 보인다.
+                    </li>
+                </ul>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <img src="{{url_for('static', filename='연도별 18세 이상.png')}}" alt='연도별 18세 이상' width='500' height='400' />
+            </td>
+            <td>
+                <h3>최근 "오징어 게임" 등 연령제한 K드라마 증가 </h3>
+                <p>
+                <ul>
+                    <li>연도별 연령제한 드라마 수 시각화</li>
+                </ul>
+                </p>
+                <p>
+                <h4>분석 결과</h4>
+                <ul>
+                    <li>증가하는 그래프 확인</li>
+                    <li>어떤 이유인지 다른 컬럼을 통해 확인</li>
+                </ul>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <img src="{{url_for('static', filename='채널별 18세 이상 시청 드라마.png')}}" alt='채널별 18세 이상 시청 드라마' width='500' height='400' />
+            </td>
+            <td>
+                <h3>어떤 채널에서 만들어지는지 분석하기 위해 채널별 연령제한 드라마 제작수 시각화</h3>
+                <p>
+                <ul>
+                    <li>연령제한 드라마들을 채널별로 그룹화 후 시각화</li>
+                </ul>
+                </p>
+                <p>
+                <h4>분석 결과</h4>
+                <ul>
+                    <li>넷플릭스가 압도적으로 많다</li>
+                    <li>OTT영향으로 K드라마도 방송수위에 변화가 생긴 것을 확인할 수 있었다.</li>
+                </ul>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <img src="{{url_for('static', filename='미디어 유입 경로.png')}}" alt='미디어 유입 경로' width='600' height='500' />
+            </td>
+            <td>
+                <h3>K드라마가 OTT의 영향을 많이 받는것으로 확인, 주로 어떤 경로로 유입이 되는지 분석</h3>
+                <p>
+                <ul>
+                    <li>연령별 미디어 유입경로 증가량 데이터 수집하여 시각화</li>
+                </ul>
+                </p>
+                <p>
+                <h4>분석 결과</h4>
+                <ul>
+                    <li>예상대로 OTT를 통한 유입 증가량이 많다</li>
+                    <li>50대 유입 증가량이 많은 특이점 확인</li>
+                    <li>젊은층이 아닌 50대가 많은 이유 다른 데이터로 조사</li>
+                </ul>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <img src="{{url_for('static', filename='연령별 TV.png')}}" alt='연령별 TV' width='700' height='400' />
+                <img src="{{url_for('static', filename='연령별 스마트폰.png')}}" alt='연령별 스마트폰' width='700' height='400' />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>OTT 통한 미디어 유입 증가량이 많기 때문에, OTT에 접근하기 쉬운 매체 조사</h3>
+                <p>
+                <ul>
+                    <li>연령별 매체 사용률 데이터를 수집</li>
+                    <li>연령별 TV, 스마트폰 각각 그룹화하여 시각화</li>
+                </ul>
+                </p>
+                <p>
+                <h4>분석 결과</h4>
+                <ul>
+                    <li>전체적으로 TV는 감소, 스마트폰은 증가 확인</li>
+                    <li>5~60대 스마트폰 사용 증가를 통해 OTT유입이 많은것을 확인할 수 있었다</li>
+                    <li>스마트폰 OTT 연관 기사: <a href='https://news.nate.com/view/20231228n26441'>https://news.nate.com/view/20231228n26441</a></li>
+                </ul>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <img src="{{url_for('static', filename='K드라마 검색량.png')}}" alt='K드라마 검색량' width='600' height='300' />
+            </td>
+            <td>
+                <h3>K드라마 관심도 확인을 위해 K드라마 검색량 조사</h3>
+                <p>
+                <ul>
+                    <li>구글에서 K드라마 검색량 데이터 수집</li>
+                    <li>연도별 K드라마 검색량 시각화</li>
+                </ul>
+                </p>
+                <p>
+                <h4>분석 결과</h4>
+                <ul>
+                    <li>2023-04-09 이상치 확인</li>
+                    <li>조사를 통해 누누티비 종료 시점인 것을 확인</li>
+                    <li>K드라마에 인기와 관심이 큰 만큼 좋지 않은 방법으로도 접근하려는 경우가 증가</li>
+                    <li>누누티비 관련 기사: <a href='https://www.inews24.com/view/1585549'>https://www.inews24.com/view/1585549</a></li>
+                </ul>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <img src="{{url_for('static', filename='감독별 평점.png')}}" alt='감독별 평점' width='300' height='400' />
+                <img src="{{url_for('static', filename='작가별 평점.png')}}" alt='작가별 평점' width='300' height='400' />
+                <img src="{{url_for('static', filename='제작사별 평점.png')}}" alt='제작사별 평점' width='300' height='400' />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>사용하지 않은 데이터</h3>
+                <p>
+                <ul>
+                    <li>감독별로 그룹화하여 평점 평균 분석</li>
+                    <li>작가별로 그룹화하여 평점 평균 분석</li>
+                    <li>제작사별로 그룹화하여 평점 평균 분석</li>
+                </ul>
+                </p>
+                <p>
+                <h4>분석 결과</h4>
+                <ul>
+                    <li>세 데이터 모두 데이터양에 비해 많은 수의 그룹이 나오게 되고 그에 속한 데이터 수(1~2개)도 적기 때문에 무의미 하다고 판단</li>
+                </ul>
+                </p>
+            </td>
+        </tr>
+    </table>
+        <br>
+        <br>
+        <br>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+            section:before{
+                content:'';
+                background: linear-gradient(to right, black, transparent);
+                position:absolute;
+                left:0;
+                height:100%;
+                width:90%
+            }
+            body{
+                margin: 0;
+                background-color: black;
+            }
+            section{
+                background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/9737377e-a430-4d13-ad6c-874c54837c49/945eec79-6856-4d95-b4c6-83ff5292f33d/KR-ko-20220111-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+                background-repeat: no-repeat; 
+                background-size: cover; 
+                position: relative;
+                height: 100vh;
+            }
+            #title {
+                font-family: 'Bebas Neue', sans-serif;
+                text-align: center;
+                color: white;
+                font-size: 4em;
+                position: absolute;
+                top: 5%;
+                left: 7%;
+            }
+            #cs1 {
+                color: white;
+                font-size: 2em;
+                top: 20%;
+                left: 5%;
+                position: absolute;
+                text-decoration: none;
+            }
+            #cs2 {
+                color: white;
+                font-size: 2em;
+                top: 27%;
+                left: 5%;
+                position: absolute;
+                text-decoration: none;
+            }
+            #cs3 {
+                color: white;
+                font-size: 2em;
+                top: 34%;
+                left: 5%;
+                position: absolute;
+                text-decoration: none;
+            }
+            #cs4 {
+                color: white;
+                font-size: 2em;
+                top: 41%;
+                left: 5%;
+                position: absolute;
+                text-decoration: none;
+            }
+            #cs5 {
+                color: white;
+                font-size: 2em;
+                top: 48%;
+                left: 5%;
+                position: absolute;
+                text-decoration: none;
+            }
+            #cs6 {
+                color: white;
+                font-size: 2em;
+                top: 55%;
+                left: 5%;
+                position: absolute;
+                text-decoration: none;
+            }
+            #cs7 {
+                color: white;
+                font-size: 2em;
+                top: 62%;
+                left: 5%;
+                position: absolute;
+                text-decoration: none;
+            }
+            #cs8 {
+                color: white;
+                font-size: 2em;
+                top: 69%;
+                left: 5%;
+                position: absolute;
+                text-decoration: none;
+            }
+
+            #contentArea {
+                position: absolute;
+                top: 80%;
+                left: 10%;
+                width: 80%;
+                height: 20%;
+                background-color: rgba(0,0,0,0.7); 
+                color: white;
+                padding: 20px;
+                box-sizing: border-box;
+                display: none; 
+                opacity: 0;
+                transition: opacity 0.5s; 
+            }
+            #contentArea{
+                font-size: 2em;
+            }
+            #title {
+                text-align: center;
+                color: rgb(255, 0, 0); 
+                font-size: 4em;
+                position: absolute;
+                top: 5%;
+                left: 7%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <section></section>
+        <h1 id="title">K드라마는 어떤 변화를 하고 있나</h1>
+        <a href="{{url_for('page', name='1')}}" id="cs1">1.분석목표설명</a>
+        <a href="{{url_for('page', name='2')}}" id="cs2">2.분석 방법</a>
+        <a href="{{url_for('page', name='3')}}" id="cs3">3.사용한 라이브러리</a>
+        <a href="{{url_for('page', name='4')}}" id="cs4">4.활용한 데이터셋</a>
+        <a href="{{url_for('page', name='5')}}" id="cs5">5.분석 결과 시각화</a>
+        <a href="{{url_for('page', name='6')}}" id="cs6">6.분석 결과 정리</a>
+        <a href="{{url_for('page', name='7')}}" id="cs7">7.데이터 출처</a>
+        <a href="{{url_for('page', name='8')}}" id="cs8">8.팀원 역할</a>
+
+
+        <div id="contentArea">여기에 콘텐츠가 표시됩니다.</div>
+        <script>
+            document.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); 
+                    var href = this.getAttribute('href'); 
+                    fetch(href)
+                        .then(response => response.text())
+                        .then(data => {
+                            var contentArea = document.getElementById('contentArea');
+                            contentArea.innerHTML = data; 
+                            contentArea.style.display = 'block';
+                            contentArea.style.opacity = 1; 
+                        })
+                        .catch(error => console.error('Error:', error)); 
+                });
+            });
+        </script>
+    </body>
+</html>
